@@ -15,11 +15,34 @@ import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { Input } from '@/components/ui/input';
 import { Badge } from "@/components/ui/badge"
 
+type User = {
+    bio: string;
+    // add other fields if you have them, for example:
+    name?: string;
+    email?: string;
+    followers?: number;
+    following?:number;
+    html_url?:string;
+
+  };
+  type Repo = {
+    id: number;
+    name: string;
+    owner: {
+      user_view_type: string;
+    };
+    language:string;
+    forks:number;
+    watchers:number;
+    open_issues:number;
+    // add other properties if needed
+  };
+  
 const UserPage = () => {
     const [loading,setLoading] = useState(true);
     const {username} = useParams();
-    const [user,setUser] = useState(null);
-    const [repos,setRepos] = useState([]);
+    const [user,setUser] = useState<User | null>(null);
+    const [repos,setRepos] = useState<Repo[]>([]);
     console.log("in UserPage",username);
     
      useEffect(()=>{
