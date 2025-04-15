@@ -114,8 +114,8 @@ const UserPage = () => {
                  <hr className='bg-gray-800 my-4 w-[90%]' />
                    
                   
-                {repos.map((repo)=>(
-                                    <div className='flex flex-col  space-y-3 mt-4 '>
+                {repos.map((repo)=>( 
+                                    <div key={repo.id} className='flex flex-col  space-y-3 mt-4 '>
                                     <div className='flex gap-2'>
                                         <h1 className='text-blue-500 font-bold text-xl'>{repo.name} 
                                             <span>
