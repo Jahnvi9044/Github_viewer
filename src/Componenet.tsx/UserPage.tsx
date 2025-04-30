@@ -12,7 +12,7 @@ import InfoCard from './InfoCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
-import { Input } from '@/components/ui/input';
+import WeeklyCommitActivity from './WeeklyCommitActivity';
 import { Badge } from "@/components/ui/badge"
 
 type User = {
@@ -98,7 +98,8 @@ const UserPage = () => {
                 <div className='w-[60%] '>
                    <h1 className='font-bold md:text-4xl text-xl'> {user.name} </h1>
                    <h3 className='font-light md:text-2xl text-lg text-gray-600'> {username} </h3>
-                   <hr className='w-full hidden md:flex my-2 md:my-10' />
+                   <hr className='w-full hidden md:flex my-2 md:mt-10' />
+                   <Button>View Chat</Button>
                 </div>
            </div>
           
@@ -131,34 +132,14 @@ const UserPage = () => {
                <hr className='bg-gray-800' />
 
             </div>
-
-            <div className='flex  flex-col w-full'>
+             
+            {/* <div className='flex  flex-col w-full'>
                 <div className='font-bold my-5 md:my-0'>Repositories <span className='w-10 h-10 rounded-full bg-gray-100 p-1' >{repos.length}</span></div>
                  <hr className='bg-gray-800 my-4 w-[90%]' />
                    
                   
                 {repos.map((repo)=>( 
-                                    <div key={repo.id} className='flex flex-col  space-y-3 mt-4 '>
-                                    <div className='flex gap-2'>
-                                        <h1 className='text-blue-500 font-bold text-xl'>{repo.name} 
-                                            <span>
-                                            <Badge variant="outline" className='mx-2 rounded-full'>{repo.owner.user_view_type}</Badge>
-                                            </span>
-                                        </h1>
-                                       
-                                        
-                
-                                    </div>
-                                    <div className='flex gap-3'>
-                                      <p>{repo.language}</p>
-                                      <p>forks-{repo.forks}</p>
-                                      <p className='hidden md:flex'>open_issues-{repo.open_issues}</p>
-                                      <p>watchers-{repo.watchers}</p>
-                               
-                                    </div>
-                                    <hr className='w-[90%] my-2 md:my-4' />
-                                  
-                                 </div>
+                               <RepoCard key={repo.id} repo={repo}/>
                 
                 ))}  
                
@@ -166,7 +147,9 @@ const UserPage = () => {
 
 
 
-            </div>
+            </div> */}
+            <WeeklyCommitActivity username ={username ?? ''}></WeeklyCommitActivity>
+
 
          </div>
         

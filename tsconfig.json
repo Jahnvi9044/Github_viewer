@@ -1,19 +1,17 @@
 {
- 
-
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // add DOM to enable JSX.Element  
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
-       "jsx": "react-jsx"
-  }
-,
+       "jsx": "react-jsx",
+       "types": ["react","react-dom"]
+  },
   "include": ["src"],
-
 }

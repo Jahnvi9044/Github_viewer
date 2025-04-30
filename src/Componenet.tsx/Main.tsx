@@ -131,7 +131,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import Typewriter from './TypeWriter';
+import Typewriter from './Typewriter';
 import { motion } from 'framer-motion';
 import { DialogDemo } from './DialogDemo';
 import {useState} from 'react'
